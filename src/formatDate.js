@@ -35,15 +35,9 @@ function formatDate(date, fromFormat, toFormat) {
     }
   }
 
-  for (let i = 0; i < fromFormat.length; i++) {
-    if (fromFormat[i] === 'YYYY' || fromFormat[i] === 'YY') {
-      result[toYearIndex] = dateCopy[fromYearIndex];
-    } else if (fromFormat[i] === 'MM') {
-      result[toMonthIndex] = dateCopy[fromMonthIndex];
-    } else if (fromFormat[i] === 'DD') {
-      result[toDayIndex] = dateCopy[fromDayIndex];
-    }
-  }
+  result[toYearIndex] = dateCopy[fromYearIndex];
+  result[toMonthIndex] = dateCopy[fromMonthIndex];
+  result[toDayIndex] = dateCopy[fromDayIndex];
 
   if (fromFormat[fromYearIndex] === 'YYYY' && toFormat[toYearIndex] === 'YY') {
     result[toYearIndex] = result[toYearIndex].slice(-2);
