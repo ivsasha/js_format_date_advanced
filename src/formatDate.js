@@ -25,7 +25,9 @@ function formatDate(date, fromFormat, toFormat) {
     } else if (fromFormat[i] === 'DD') {
       fromDayIndex = i;
     }
+  }
 
+  for (let i = 0; i < toFormat.length; i++) {
     if (toFormat[i] === 'YYYY' || toFormat[i] === 'YY') {
       toYearIndex = i;
     } else if (toFormat[i] === 'MM') {
